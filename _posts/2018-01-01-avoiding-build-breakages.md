@@ -19,7 +19,7 @@ We need to plan to mitigate build errors and have a proper approach to finding a
 
 ## Benefits of frequent Continouos Integrations
 
-The basic idea of continuous integration is to integrate code changes more rapidly. Each integration is verified by an automated build with a test suite to identify possible build or functionality errors as well as the quality of the code. Each developer is expected to integrate their changes frequently — the duration may vary on the team setup and development phase of the team. 
+The basic idea of continuous integration is to integrate code changes more rapidly. Each integration is verified by an automated build with a test suite to identify possible build or functionality errors as well as the quality of the code. Each developer is expected to integrate their changes frequently — the duration may vary on the team setup and development phase of the team.
 
 If you’re the only one contributing to a code base, then a deferred commit won’t be that crucial. However, if you’re in a team with several developers, and everyone is thinking, “Oh well, I’ll wait to integrate my changes until completing my feature fully,” then you’ll often end up handling a lot of unwanted conflicts and losing time. Late aggregated code merges will lead to more rework, refactoring, and underutilizing of shared code segments(No DRY).
 
@@ -33,7 +33,7 @@ The general rule would be:
 
 At the end of each task, developers are expected to fetch the latest changes from upstream. This practice significantly helps teams minimize integration conflicts and logic deviations, among the other benefits.
 
-With proper continuous integration in place, developers are always starting their feature developments from a known stable code base, guaranteeing the expected functionality achieved using an automated test suite and desired code quality achieved using static code analysis. 
+With proper continuous integration in place, developers are always starting their feature developments from a known stable code base, guaranteeing the expected functionality achieved using an automated test suite and desired code quality achieved using static code analysis.
 
 If a continuous integration build is broken, it is essential to fix it fast as possible to guarantee the reliability of the main branch.
 
@@ -68,7 +68,7 @@ Committing your changes upstream does not finish your development cycle. You mus
 
 ### If you break it, you make it
 
-Suppose the integration build is broken due to your change sets. In that case, you must take full responsibility to fix it as soon as possible. 
+Suppose the integration build is broken due to your change sets. In that case, you must take full responsibility to fix it as soon as possible.
 
 The owner of the change set is the best person to address the issue effectively. Consider build breaks the highest priority items since they can spoil the other developer environments and will also interrupt the team’s development workflow significantly. If fixing the integration build take considerable time, revert changes and bring the integration branch to the previous state. You can push your changes back after the fix is applied locally and tested correctly. Take complete ownership of build breaks happening due to your code changes. You are the best person to address them.
 
