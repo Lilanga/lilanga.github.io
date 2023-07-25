@@ -1,5 +1,5 @@
 ---
-title: Why logging matters in software engineering
+title: Why logging matters for software engineers
 date: 2018-03-30 15:00:00 +0530
 categories: [Logging, Best practices]
 tags: [Logging, DevOps]
