@@ -8,9 +8,9 @@ image:
   path: /assets/img/posts/2023-01-18/cover.png
 ---
 
-AWS lambda is one of the popular serverless computing service that is well-suited for many functional/event-based processing requirements. 
+AWS lambda is one of the popular serverless computing service that is well-suited for many functional/event-based processing requirements.
 
-Even in managed computation platforms like cloud-based Kubernetes clusters (like EKS), we have to involve in system maintenance, capacity planning, buffer resource allocations, planning and configuring for smooth automatic scaling, managing platform security, patching platforms, etc. 
+Even in managed computation platforms like cloud-based Kubernetes clusters (like EKS), we have to involve in system maintenance, capacity planning, buffer resource allocations, planning and configuring for smooth automatic scaling, managing platform security, patching platforms, etc.
 
 The beauty of a function-based computation platforms like AWS lambda is you do not need to worry about any of the platform-level operational activities, and you are paying only for the exact amount of resources you used for your computation activity.
 
@@ -151,6 +151,6 @@ NodeJS consumes the highest level of resources, while Golang consumes low resour
 
 With the stats, we can see Rust will have the least execution cost per function with the least amount of CPU and memory allocations per function. Function initialization duration is also lowest in Rust.
 
-So with this kind of workload, Rust will give you the highest level of cost optimization. This can be varied with concurrent operations and high CPU-intensive workload, which is not measured here. 
+So with this kind of workload, Rust will give you the highest level of cost optimization. This can be varied with concurrent operations and high CPU-intensive workload, which is not measured here.
 
 But overall, this will help us get the idea about adopting the tech stack for our cloud functions while considering other external factors.

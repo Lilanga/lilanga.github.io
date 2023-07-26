@@ -34,7 +34,7 @@ _Sequencial locks_
 
 ## Locks with controlled (keyed) unlocking mechanism
 
-Although sequencial locks has unlocking build-in with the lock, some padlocks need a key to unlock. You have to hold the correct key to unlock the padlock. 
+Although sequencial locks has unlocking build-in with the lock, some padlocks need a key to unlock. You have to hold the correct key to unlock the padlock.
 
 That’s better alternative, but we need to be sure that the padlock only has one key to unlock and key cannot replicate. Some padlock keys are less complex so skilled locksmiths may be able to create a duplicate key. Now locks and keys are separate entities, you do not need to worry about securing the key exchange. Unlocked padlocks can be used by anyone to lock your packages but only you can unlock it if you secured your keys.
 
@@ -51,7 +51,7 @@ We can apply the same analogy to secure digital asset transport. You can give ce
 
 ## Transport Layer Security in networking
 
-We need to create a padlock 🔒 with a unique key 🔑 to exchange digital information using the network transport layer. The key should be complex enough so malicious users will not be able to replicate the key. 
+We need to create a padlock 🔒 with a unique key 🔑 to exchange digital information using the network transport layer. The key should be complex enough so malicious users will not be able to replicate the key.
 
 Also, we need to find a way to generate a unique seal㊙️for the third party so they can certify padlock details using their seal.
 
@@ -79,11 +79,11 @@ The next step is to ensure the authenticity of public keys so other parties who 
 
 ## Digital Certificates
 
-Now we need a mechanism to ensure the authenticity of the public keys. Digital certificates are used to validate the ownership of the public key and label the metadata related to that public key as true and correct. 
+Now we need a mechanism to ensure the authenticity of the public keys. Digital certificates are used to validate the ownership of the public key and label the metadata related to that public key as true and correct.
 
 For that reason, digital certificates are also referred to as identity certificates and public-key certificates. This certificate contains information about the public key and its owner. It is signed by a trusted party called the certificate issuer, who uses their digital signature to stamp the certificate as a valid document.
 
-Public Key Infrastructure (PKI) validates and generates digital certificates used in secure network communication, including secure HTTP communication. PKI discusses a decentralized trusted scheme, often referred to as a web of trust schemes. 
+Public Key Infrastructure (PKI) validates and generates digital certificates used in secure network communication, including secure HTTP communication. PKI discusses a decentralized trusted scheme, often referred to as a web of trust schemes.
 
 Widely used PKI implementation is X.509 International Telecommunication Union (ITU) standard defined in RFC 5280.
 
@@ -92,7 +92,7 @@ Widely used PKI implementation is X.509 International Telecommunication Union (I
 ![The three way handshake](/assets/img/posts/2022-05-16/ssl-initiation.png)
 _Three way handshake_
 
-A secured TCP connection is initialized using a process called three-way handshake. 
+A secured TCP connection is initialized using a process called three-way handshake.
 
 ACK Sync - three way handshake
 : The client sends ‘SYN’ sync message, and when he has received ‘ACK’ acknowledgment from the sever initial communication channel is established.
@@ -127,7 +127,7 @@ The following diagram illustrates the flow of the session key creation and data 
 ![Session key creation and data exchange](/assets/img/posts/2022-05-16/session-key-creation.png)
 _Session key creation and data exchange_
 
-TLS provides a mechanism to secure data exchange via public networks using asymmetric encryption algorithms while initiating the client-server connection. This process can secure the symmetric key exchange for encrypting data for subsequent data exchanges. 
+TLS provides a mechanism to secure data exchange via public networks using asymmetric encryption algorithms while initiating the client-server connection. This process can secure the symmetric key exchange for encrypting data for subsequent data exchanges.
 
 A symmetric key is not safe for long-term data encryption. But this key rotates with each TCP session. So malicious users cannot recover keys with the computation power we have today.
 
