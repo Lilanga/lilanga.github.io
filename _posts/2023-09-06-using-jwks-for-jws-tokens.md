@@ -51,7 +51,7 @@ JWKs are cryptographic key representation using JSON data formats. They are like
 
 Let's go through an example of how JSON Web Keys (JWKs) are used to authenticate and verify JSON Web Signatures (JWS).
 
-In this example, we'll use NodeJS and libraries called `node-jose` and `jsonwebtoken` to demonstrate the process. `jsonwebtoken` is a widely used library for working with JWTs, `node-jose` is a popular library with JWK workflows as it provides well-crafted helper utilities for the related operations. 
+In this example, we'll use NodeJS and libraries called `node-jose` and `jsonwebtoken` to demonstrate the process. `jsonwebtoken` is a widely used library for working with JWTs, `node-jose` is a popular library with JWK workflows as it provides well-crafted helper utilities for the related operations.
 
 > Full source code for [the demo solution is available at this GitHub repo](https://github.com/Lilanga/jwk-for-jwt).
 {: .prompt-tip }
@@ -300,7 +300,7 @@ app.listen(PORT, () => {
 })
 ```
 
-In this example, the server uses a JWKS client to fetch JWKs from a specified URL (often provided by an authentication provider like Auth0). 
+In this example, the server uses a JWKS client to fetch JWKs from a specified URL (often provided by an authentication provider like Auth0).
 
 The authenticateJWT middleware reads the token from the Authorization header, verifies it using the JWKs, and attaches the decoded user information to the request object before passing it to the protected route.
 
