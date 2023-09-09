@@ -8,10 +8,6 @@ image:
   path: /assets/img/posts/2023-08-07/cover.png
 ---
 
-<script src="https://embed.runkit.com" data-element-id="create-keys"></script>
-<script src="https://embed.runkit.com" data-element-id="create-jwe"></script>
-<script src="https://embed.runkit.com" data-element-id="jwe-gen"></script>
-
 Due to the publicly available nature of the World Wide Web, security is a critical element for web-based application development. Users should be able to trust the web applications, while legit web applications should be able to trust requests originating from users for legitimacy.
 
 The token-based authorisation has emerged as a popular mechanism to safeguard user interactions due to the nature of being a highly efficient solution for frequent message passing between two parties. Token-based authorisation enables minimizing the frequency of user authentication while providing a robust mechanism for user authorisation.
@@ -170,8 +166,8 @@ async function generateJWE(claims, signKey) {
 ```
 
 Runkits for encoding and decoding JWE token
-> Please refer the following Runkit for the same operation. [JWE token generation](https://runkit.com/lilanga/json-web-encryption-jwe-token---encoding).
-You can use the following runkit to decode the JWE token generated above. [JWE token decoding](https://runkit.com/lilanga/json-web-encryption-jwe-token---decoding).
+> Please refer the following Runkit for the same operation. [JWE token generation](https://runkit.com/lilanga/json-web-encryption-jwe-token---encoding){:target="_blank"}.
+You can use the following runkit to decode the JWE token generated above. [JWE token decoding](https://runkit.com/lilanga/json-web-encryption-jwe-token---decoding){:target="_blank"}.
 {: .prompt-tip }
 
 **JWK (JSON Web Key):**
@@ -210,7 +206,7 @@ So, attackers change the token's header algorithm claim to a symmetric algorithm
 
 Using strong keys as secret keys to sign tokens is essential when using symmetric algorithms. Always ensure sufficient entropy is met for this cryptographic secret key.
 
-You can use this [nice tool from Tim](https://timcutting.co.uk/tools/password-entropy) to get an idea of proper secret key entropy.  
+You can use this [nice tool from Tim](https://timcutting.co.uk/tools/password-entropy){:target="_blank"} to get an idea of proper secret key entropy.  
 
 > Malicious users can use tools like `hashcat` to easily crack simple secret keys. So proper entropy is paramount important. Always use a cryptographic library or tool to generate your secret key.
 {: .prompt-info }

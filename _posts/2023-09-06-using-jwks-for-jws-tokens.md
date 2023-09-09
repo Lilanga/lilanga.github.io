@@ -19,7 +19,7 @@ There are many best practices to ensure JWS are tamper proof. Using symmetric al
 
 A JWK typically includes key parameters such as the key type (RSA, ECDSA, Octet key, etc.), key usage (signing, encryption), and the actual key material. These parameters are represented as JSON key-value pairs.
 
-You can refer this [RunKit for sample implementation](https://runkit.com/lilanga/64f7d2feeed87a00081776a2) of JWK key pair for RSA keys to get an idea of JWK structure.
+You can refer this [RunKit for sample implementation](https://runkit.com/lilanga/64f7d2feeed87a00081776a2){:target="_blank"} of JWK key pair for RSA keys to get an idea of JWK structure.
 
 JWKs are JSON based representation of these keys while PEM and DER formats are alternative binary based representation of those keys.
 
@@ -53,7 +53,7 @@ Let's go through an example of how JSON Web Keys (JWKs) are used to authenticate
 
 In this example, we'll use NodeJS and libraries called `node-jose` and `jsonwebtoken` to demonstrate the process. `jsonwebtoken` is a widely used library for working with JWTs, `node-jose` is a popular library with JWK workflows as it provides well-crafted helper utilities for the related operations.
 
-> Full source code for [the demo solution is available at this GitHub repo](https://github.com/Lilanga/jwk-for-jwt).
+> Full source code for [the demo solution is available at this GitHub repo](https://github.com/Lilanga/jwk-for-jwt){:target="_blank"}.
 {: .prompt-tip }
 
 We are creating two services. The **auth service** is responsible for authentication and authorization related operations. The **consumer service** is having protected endpoints and validate JWS tokens and authorize users to protected endpoints.
