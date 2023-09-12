@@ -1,15 +1,16 @@
 ---
 # the default layout is 'page'
+title: About me (!Bitsfactory)
 icon: fas fa-info-circle
 order: 4
 ---
+
+**Hello there! Welcome to my blog!**
 
 > By sharing knowledge, we grow. Our thoughts are not original to us; they are founded on ideas shared by numerous people.
 {: .prompt-tip }
 
 ---
-
-**Hello there! Welcome to my blog.**
 
  I'm Lilanga Gamage! 🚀
 
