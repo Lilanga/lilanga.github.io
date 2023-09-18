@@ -9,9 +9,11 @@ image:
   path: /assets/img/posts/2023-09-17/cover.png
 ---
 
-Bun, the drop-in replacement for NodeJS, is a swiss-knife toolset for Javascript/Typescript development, including package managers, bundlers, and test runners in a single application.
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-The Bun runtime is powered by JavaScriptCore instead of NodeJS V8 runtime and written using Zig language. Bun runtime is a highly optimized runtime compared to existing Javascript runtime engines. According to the official documentation, Bun is designed from scratch, targeting Speed, Elegant APIs for everyday tasks, and a Cohesive Developer experience.
+[Bun](https://bun.sh), the drop-in replacement for NodeJS, is a swiss-knife toolset for Javascript/Typescript development, including package managers, bundlers, and test runners in a single application.
+
+The Bun runtime is powered by [JavaScriptCore](https://developer.apple.com/documentation/javascriptcore) instead of NodeJS V8 runtime and written using [Zig](https://ziglang.org) language. Bun runtime is a highly optimized runtime compared to existing Javascript runtime engines. According to the official documentation, Bun is designed from scratch, targeting Speed, Elegant APIs for everyday tasks, and a Cohesive Developer experience.
 
 Here, let's observe what performance improvement Bun can provide(if any) compared to NodeJS. Let's compare it with Golang and Rust, generally considered languages for creating highly optimized executables, to get a better idea of the overall performance they provide.
 
@@ -144,7 +146,7 @@ func counter(n int64) int64 {
 
 ### Rust API Implementation
 
-Following is the Rust implementation of the same logic. Here, we are using `tokio` and `wrap` libraries to create our HTTP server since Rust only has a tcp standard library.
+Following is the Rust implementation of the same logic. Here, we are using [`tokio`](https://tokio.rs/) and [`warp`](https://crates.io/crates/warp) libraries to create our HTTP server since Rust only has a tcp standard library.
 
 ```rust
 use serde::{Serialize, Deserialize};
@@ -198,7 +200,7 @@ Now, we have our server implementations. For Golang and Rust, I created optimize
 
 Let's run our HTTP servers and see what kind of Throughput these languages can provide. Here, I am using the bombardier load tool to generate the load. I am using 10000000 as the value, so our code will execute for 10000000 iterations for each request and yield the result. Our load tool will generate 25 requests for each endpoint with three concurrent requests at a given time.
 
-Following is the command I used with the bombardier.
+Following is the command I used with [the bombardier](https://pkg.go.dev/github.com/codesenberg/bombardier).
 
 `bombardier -c 3 -n 25 http://localhost:3000/\?value\=10000000`
 
@@ -240,8 +242,71 @@ Following is the summary of profiling results collected by each implementation p
 | Golang | 578.74 | 6.93ms | 88.75KB/s | 25 | 0 |
 | Rust | 8389.11 | 340.20µs | 1.79MB/s | 25 | 0 |
 
+### Throughput comparison between NodeJS and Bun
+
+<div>
+  <canvas id="throughput"></canvas>
+</div>
+
+Bun is roughly 36 times faster compared to NodeJS. This is a significant improvement in throughput.
+
+### Latency comparison between NodeJS and Bun
+
+<div>
+  <canvas id="latency"></canvas>
+</div>
+
+Bun is roughly 42 times faster compared to NodeJS. This is a significant improvement in latency.
+
+## Conclusion
+
 According to the statistics we collected, bun runtime significantly improved compared to NodeJS runtime. Here, we are using Node version 20, which is announced as having many runtime improvements compared to older versions of NodeJS.
 
 Golang and Rust are still way faster than these JavaScript engines. It makes sense because those languages produce optimized compiled binaries while NodeJS and Bun use JavaScript interpretation with Just-In-Time compiling techniques to improve the code execution. However, Bun's underlying FTL (named Faster than Light) JIT compiler is faster than light compared to NodeJS.
 
 So many factors contribute to optimized server resource utilization and optimal code executions. But comparing the same NodeJS and Bun Javascript runtime eco-systems, it looks like Bun can give a significant advantage for Javascript-based applications.
+
+<script>
+  const throughput = document.getElementById('throughput');
+  const latency = document.getElementById('latency');
+  new Chart(throughput, {
+    type: 'bar',
+    data: {
+      labels: ['NodeJS', 'Bun'],
+      datasets: [
+      {
+        label: 'throughput',
+        data: [459.92, 16700],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  new Chart(latency, {
+    type: 'bar',
+    data: {
+      labels: ['NodeJS', 'Bun'],
+      datasets: [
+      {
+        label: 'requests/sec',
+        data: [2.03, 88.2],
+        backgroundColor: 'rgba(255, 99, 132, 0.4)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
