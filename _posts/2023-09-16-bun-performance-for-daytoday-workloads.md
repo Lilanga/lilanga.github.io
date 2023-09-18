@@ -1,6 +1,6 @@
 ---
 title: Performance of Bun for day-to-day workloads - Comparison with NodeJS, Golang and Rust
-date: 2023-09-16 22:00:00 +0800
+date: 2023-09-17 22:00:00 +0800
 categories: [Optimisations, Performance, Scalability]
 tags: [nodejs, bun, golang, rust, performance, scalability]
 render_with_liquid: true
