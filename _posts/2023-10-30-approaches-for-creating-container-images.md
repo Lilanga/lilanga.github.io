@@ -136,3 +136,7 @@ Following table compares and contrasts Dockerfile and Buildpacks based on number
 | **Integration** | Well integrated with other tools and platforms | Limited integration with other tools and platforms |
 | **Multi-stage builds** | Easy to create multi-stage builds | Hard to create multi-stage builds |
 | **Non-developers** | Hard to use for non-developers | Easy to use for non-developers |
+
+## Summary
+
+In this blog post, we have discussed two generic approaches to creating container images for applications, namely Dockerfile and Cloud Native Buildpacks. A Dockerfile is a text file that contains a series of instructions to build a container image. Many tools and frameworks were created later that support Dockerfile as container specification apart from the docker tool. Buildpacks are a framework that automates the creation of container images for applications. Buildpacks detect the language and framework of the application, install the required dependencies, and configure the runtime environment. At the same time, Dockerfile gives you complete control and flexibility to create the container image according to your needs.
