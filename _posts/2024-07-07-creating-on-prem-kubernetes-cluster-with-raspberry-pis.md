@@ -596,4 +596,6 @@ We should be able to see the master node and all the worker nodes listed, with t
 
 By following these steps, you should be able to create your own on-premise Kubernetes cluster utilising Raspberry PI devices. Your control plane, hosted on the master node, will now be able to manage and distribute workloads across all the nodes in the cluster. Configuring kubectl on your local machine will allow you to interact with the cluster conveniently, making it easier to deploy and manage applications.
 
+You can find the ansible playbooks and ansible inventory I used for this setup in my [github code repository](https://github.com/Lilanga/k8s-cluster-with-raspberry-pis-ansible).
+
 This completes the setup of a fully functional Kubernetes cluster using Raspberry Pi devices. You can now start deploying applications and services to your cluster, leveraging the power and flexibility of Kubernetes in an on-premise environment.
