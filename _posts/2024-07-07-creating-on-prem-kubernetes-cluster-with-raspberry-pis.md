@@ -458,32 +458,6 @@ Here is the complete Ansible playbook to configure the Kubernetes master node:
       changed_when: kube_proxy_diff.rc == 2  # Only apply changes if there is a diff
       when: kube_proxy_diff.rc == 2  # Only apply changes if there is a diff
 
-    - name: Apply MetalLB native configuration
-      shell: kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.5/config/manifests/metallb-native.yaml
-      when: kubeadm_init.changed
-
-    - name: Apply MetalLB FRR configuration
-      shell: kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.5/config/manifests/metallb-frr.yaml
-      when: kubeadm_init.changed
-
-    - name: Configure MetalLB with ConfigMap
-      shell: |
-        cat <<EOF | kubectl apply -f -
-        apiVersion: v1
-        kind: ConfigMap
-        metadata:
-          namespace: metallb-system
-          name: config
-        data:
-          config: |
-            address-pools:
-            - name: default
-              protocol: layer2
-              addresses:
-              - 192.168.1.38-192.168.1.48
-        ---
-        EOF
-      when: kubeadm_init.changed
 ```
 
 ### Key Steps in the Playbook
@@ -511,14 +485,14 @@ This step will apply the Flannel CNI (Container Network Interface) configuration
 
 Check for differences in the kube-proxy configuration and apply necessary changes to enable strict ARP mode, which is required for certain network setups.
 
-#### Install MetalLB
+#### Optional: Install MetalLB
 
-> This is optional but helpful since on premise clusters cannot support load-balancers.
+> This is optional but helpful since on premise clusters cannot support load-balancers. Use only if you have high power raspberry pi device with 2GB+ memory for the master node.
 {: .prompt-info }
 
 MetalLB is a load-balancer implementation for bare metal Kubernetes clusters. It provides a way to allocate IP addresses to services.
 
-This step will apply the MetalLB configuration using the kubectl apply command, and configure MetalLB with a ConfigMap that specifies the IP address range to be used for load balancing.
+Refer the github hosted version of [above ansible playbook](https://raw.githubusercontent.com/Lilanga/k8s-cluster-with-raspberry-pis-ansible/main/config-master.yml). This step will apply the MetalLB configuration using the kubectl apply command, and configure MetalLB with a ConfigMap that specifies the IP address range to be used for load balancing.
 
 ---
 
