@@ -414,7 +414,7 @@ Here is the complete Ansible playbook to configure the Kubernetes master node:
   become: yes
   tasks:
     - name: Initialize Kubernetes cluster with pod network CIDR
-      shell: kubeadm init --pod-network-cidr=192.168.1.0/24 --ignore-preflight-errors=Mem
+      shell: kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=Mem
       args:
         creates: /etc/kubernetes/admin.conf
       register: kubeadm_init
