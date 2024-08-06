@@ -262,7 +262,7 @@ We are using the following environment variables. You need to configure your Bal
 
 ### Creating the Go Application
 
-Here is the Go code for reading data from the DHT22 sensor and publishing it to AWS IoT Core via MQTT. You can refer [this Git Repo]([Lilanga/aws-iot-dht22-sensor: Sent sensor readings to AWS IoT Core thing (github.com)](https://github.com/Lilanga/aws-iot-dht22-sensor)) for the completed code.
+Here is the Go code for reading data from the DHT22 sensor and publishing it to AWS IoT Core via MQTT. You can refer [this Git Repo](https://github.com/Lilanga/aws-iot-dht22-sensor) for the completed code.
 
 ```go
 package main
