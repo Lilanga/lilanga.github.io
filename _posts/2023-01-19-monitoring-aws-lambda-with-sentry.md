@@ -1,8 +1,8 @@
 ---
 title: Monitoring AWS lambda functions issues and performance with Sentry
 date: 2023-01-19 22:00:00 +0800
-categories: [Serverless, AWS, Monitoring]
-tags: [Logging, AWS]
+categories: [Serverless, AWS, Monitoring, Lambda]
+tags: [Logging, AWS, Serverless, Lambda]
 render_with_liquid: true
 image:
   path: /assets/img/posts/2023-01-19/cover.png

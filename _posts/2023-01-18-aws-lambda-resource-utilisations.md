@@ -1,8 +1,8 @@
 ---
 title: AWS Lambda resources utilisation comparison using NodeJS, Golang and Rust
 date: 2023-01-18 20:30:00 +0800
-categories: [Serverless, AWS]
-tags: [NodeJS, Golang, Rust, AWS]
+categories: [Serverless, AWS, Lambda]
+tags: [NodeJS, Golang, Rust, AWS, Lambda, Serverless]
 render_with_liquid: true
 image:
   path: /assets/img/posts/2023-01-18/cover.png
