@@ -17,9 +17,9 @@ JSON Web Tokens (JWT) have been widely used for these purposes, but a newer and 
 
 PASETO stands for Platform-Agnostic Security Tokens. It is designed as a safer, easier-to-use alternative to JWTs, addressing some of JWT's common security pitfalls and simplifying token handling. Unlike JWT, PASETO tokens are less prone to implementation errors and vulnerabilities such as algorithm confusion attacks because PASETO enforces strict token versions and uses modern cryptographic algorithms.
 
-PASETO tokens has two primary types, local and public. Depend on your usecase, you can adopt either local tokens or public tokens. Local tokens are encrypted token using tamper-proof encryption algorithms using secret key. These are more similar to our day-to-day JWT tokens. Public tokens however, are digitally signed using private key to ensure the integrity of the information.
+PASETO tokens have two primary types: local and public. Depending on your use case, you can adopt local or public tokens. Local tokens are encrypted tokens using tamper-proof encryption algorithms and a secret key. These are more similar to our day-to-day JWT tokens. Public tokens, however, are digitally signed using a private key to ensure the integrity of the information.
 
-PASETO tokens are consists with four sections including the optional footer. Following is the format of valid PASETO token.
+PASETO tokens consist of four sections, including the optional footer. Following is the format of a valid PASETO token.
 
 `version.purpose.payload.[footer]`
 
@@ -33,8 +33,8 @@ PASETO tokens are consists with four sections including the optional footer. Fol
 
 ## Comparing PASETO with JWT, the advandates of PASETO over JWT
 
-Like JWT, PASETO tokens are tamper-proof by design. Any alternation will result failure in token validation.
-However, compared with JWTs, PASETO bring some additional feature sets and advantages which will be trickey or hard to implement with JWTs.
+Like JWT, PASETO tokens are tamper-proof by design. Any alternation will fail token validation.
+However, compared with JWTs, PASETO brings some additional feature sets and advantages that will be tricky or hard to implement with JWTs.
 
 ### Security by Design
 
